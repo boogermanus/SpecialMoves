@@ -22,7 +22,7 @@ describe('SpecialMoveService', () => {
       expect(service.GetFirstMove('A')).toEqual('thunder');
     });
 
-    it('should throw an excpetion if parameter is not an alaphbet character', () => {
+    it('should throw an exception if parameter is not an alaphbet character', () => {
       expect(() => service.GetFirstMove('1')).toThrow(Error(service.LETTER_ERROR));
     });
 
