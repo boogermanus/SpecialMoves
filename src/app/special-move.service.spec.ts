@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SpecialMoveService } from './special-move.service';
 
 describe('SpecialMoveService', () => {
