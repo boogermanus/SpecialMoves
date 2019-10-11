@@ -120,12 +120,12 @@ export class SpecialMoveService {
       throw Error(this.LETTER_ERROR);
     }
 
-    return this.firstLetter[letter.toLowerCase()];
+    return this._firstLetter[letter.toLowerCase()];
   }
 
   public GetSecondMove(day: number): string {
     this.CheckDayRange(day);
-    return 'a';
+    return this._dayOfBirth[day];
   }
 
   private CheckDayRange(day: number): void {
