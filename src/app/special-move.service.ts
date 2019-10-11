@@ -137,4 +137,8 @@ export class SpecialMoveService {
       throw Error(this.GREATERTHAN_ERROR);
     }
   }
+
+  public GetThirdMove(letter: string): string {
+    return 'of';
+  }
 }

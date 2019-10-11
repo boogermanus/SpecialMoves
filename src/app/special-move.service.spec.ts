@@ -55,4 +55,10 @@ describe('SpecialMoveService', () => {
       }
     });
   });
+  // GetThirdMove   ---------------------------------------------------------------------------------
+  describe('GetThirdMove', () => {
+      it('should have method', () => {
+        expect(() => service.GetThirdMove('a')).toBeTruthy();
+      });
+    });
 });
