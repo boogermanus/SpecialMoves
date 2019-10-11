@@ -8,24 +8,33 @@ describe('SpecialMoveService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.get(SpecialMoveService);
   });
-
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
   describe('GetFirstMove', () => {
     it('should have method', () => {
-      expect(service.GetFirstMove('a')).toBeTruthy();
+      expect(service.GetFirstMove('a'))
+        .toBeTruthy();
     });
-
     it('should translate parameter to lowercase', () => {
       expect(service.GetFirstMove('A')).toEqual('thunder');
     });
-
-    it('should throw an exception if parameter is not an alaphbet character', () => {
-      expect(() => service.GetFirstMove('1')).toThrow(Error(service.LETTER_ERROR));
+    it('should throw exception if parameter is not an alaphbet character', () => {
+      expect(() => service.GetFirstMove('1'))
+        .toThrow(Error(service.LETTER_ERROR));
     });
-
   });
-
+  describe('GetSecondMove', () => {
+    it('should have method', () => {
+      expect(service.GetSecondMove(1)).toBeTruthy();
+    });
+    it('should throw exception if number is less than 1', () => {
+      expect(() => service.GetSecondMove(0))
+        .toThrow(Error(service.LESSTHAN_ERROR));
+    });
+    it('should thrown exception if number is greater than 31', () => {
+      expect(() => service.GetSecondMove(32))
+        .toThrow(Error(service.GREATERTHAN_ERROR));
+    });
+  });
 });
