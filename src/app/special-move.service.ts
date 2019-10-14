@@ -1,40 +1,50 @@
 import { Injectable } from '@angular/core';
 
+interface LetterMove {
+  letter: string;
+  move: string;
+}
+
+interface NumberMove {
+  dayOfBirth: number;
+  move: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class SpecialMoveService {
 
-  private _firstLetter: { [letter: string]: string; } = {
-      a: 'thunder',
-      b: 'slient',
-      c: 'flying',
-      d: 'handbag',
-      e: 'psychotic',
-      f: 'dancing',
-      g: 'holy',
-      h: 'crippling',
-      i: 'ninja',
-      j: 'iron',
-      k: 'thrusting',
-      l: 'magical',
-      m: 'death',
-      n: 'love',
-      o: 'speedy',
-      p: 'naked',
-      q: 'violent',
-      r: 'spectacular',
-      s: 'gridning',
-      t: 'sneaky',
-      u: 'bendy',
-      v: 'yellow',
-      w: 'slippery',
-      x: 'flapping',
-      y: 'everlasting',
-      z: 'golden',
-    };
+  private _firstLetter: LetterMove[] = [
+    { letter: 'a', move: 'thunder' },
+    { letter: 'b', move: 'slient' },
+    { letter: 'c', move: 'flying' },
+    { letter: 'd', move: 'handbag' },
+    { letter: 'e', move: 'psychotic' },
+    { letter: 'f', move: 'dancing' },
+    { letter: 'g', move: 'holy' },
+    { letter: 'h', move: 'crippling' },
+    { letter: 'i', move: 'ninja' },
+    { letter: 'j', move: 'iron' },
+    { letter: 'k', move: 'thrusting' },
+    { letter: 'l', move: 'magical' },
+    { letter: 'm', move: 'death' },
+    { letter: 'n', move: 'love' },
+    { letter: 'o', move: 'speedy' },
+    { letter: 'p', move: 'naked' },
+    { letter: 'q', move: 'violent' },
+    { letter: 'r', move: 'spectacular' },
+    { letter: 's', move: 'gridning' },
+    { letter: 't', move: 'sneaky' },
+    { letter: 'u', move: 'bendy' },
+    { letter: 'v', move: 'yellow' },
+    { letter: 'w', move: 'slippery' },
+    { letter: 'x', move: 'flapping' },
+    { letter: 'y', move: 'everlasting' },
+    { letter: 'z', move: 'golden' },
+  ];
 
-  public get firstLetter(): { [letter: string]: string; } {
+  public get firstLetter(): LetterMove[] {
     return this._firstLetter;
   }
 
@@ -119,7 +129,7 @@ export class SpecialMoveService {
       throw Error(this.LETTER_ERROR);
     }
 
-    return this._firstLetter[letter.toLowerCase()];
+    return this.firstLetter.find(fl => fl.letter === letter.toLowerCase()).move;
   }
 
   public GetSecondMove(day: number): string {
