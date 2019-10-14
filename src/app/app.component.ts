@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpecialMoveService } from './special-move.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SpecialMove';
+  service: SpecialMoveService;
+  constructor(service: SpecialMoveService) {
+    this.service = service;
+  }
+
+  public get surname(): {[letter: string]: string} {
+    return this.service.surname;
+  }
 }
