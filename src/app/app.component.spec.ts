@@ -21,7 +21,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'SpecialMove'`, () => {
+  it(`should have as title 'Special Move'`, () => {
     expect(app.title).toEqual('Special Move');
   });
 
