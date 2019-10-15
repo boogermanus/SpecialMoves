@@ -5,6 +5,7 @@ import { SpecialMoveService } from './special-move.service';
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: any;
+  let service: SpecialMoveService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -14,6 +15,7 @@ describe('AppComponent', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.debugElement.componentInstance;
+    service = TestBed.get(SpecialMoveService);
   }));
 
   it('should create the app', () => {
@@ -31,6 +33,6 @@ describe('AppComponent', () => {
   });
 
   it('should have property firstName', () => {
-    expect(app.firstName).not.toBeNull();
+    expect(app.firstLetter).toBeTruthy();
   });
 });
