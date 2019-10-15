@@ -1,21 +1,20 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { SpecialMoveService } from './special-move.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: any;
-  let service: SpecialMoveService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
       ],
+      imports: [ MatFormFieldModule ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.debugElement.componentInstance;
-    service = TestBed.get(SpecialMoveService);
   }));
 
   it('should create the app', () => {
@@ -23,7 +22,7 @@ describe('AppComponent', () => {
   });
 
   it(`should have as title 'SpecialMove'`, () => {
-    expect(app.title).toEqual('SpecialMove');
+    expect(app.title).toEqual('Special Move');
   });
 
   it('should render title in a h1 tag', () => {
@@ -32,7 +31,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain(`Welcome to ${app.title}!`);
   });
 
-  it('should have property firstName', () => {
+  it('should have property firstLetter', () => {
     expect(app.firstLetter).toBeTruthy();
   });
 });

@@ -8,7 +8,7 @@ import { LetterMove } from './interfaces/LetterMove';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'SpecialMove';
+  public title = 'Special Move';
   private service: SpecialMoveService;
   public get firstLetter(): LetterMove[] {
     return this.service.firstLetter;
