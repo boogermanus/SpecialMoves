@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface LetterMove {
-  letter: string;
-  move: string;
-}
-
+import { LetterMove } from './interfaces/LetterMove';
 interface NumberMove {
   dayOfBirth: number;
   move: string;
@@ -48,41 +43,41 @@ export class SpecialMoveService {
     return this._firstLetter;
   }
 
-  private _dayOfBirth: {[day: number]: string} = {
-    1: 'thrust',
-    2: 'finger',
-    3: 'knee',
-    4: 'jab',
-    5: 'tackle',
-    6: 'throw',
-    7: 'tickle',
-    8: 'choke',
-    9: 'uppercut',
-    10: 'punch',
-    11: 'claw',
-    12: 'flail',
-    13: 'grab',
-    14: 'elbow',
-    15: 'kick',
-    16: 'kiss',
-    17: 'greeting',
-    18: 'slink',
-    19: 'nap',
-    20: 'sniff',
-    21: 'hook',
-    22: 'blow',
-    23: 'scream',
-    24: 'headbutt',
-    25: 'smash',
-    26: 'stroke',
-    27: 'bite',
-    28: 'slap',
-    29: 'chop',
-    30: 'stomp',
-    31: 'smash'
-  };
+  private _dayOfBirth: NumberMove[] = [
+    { dayOfBirth: 1, move: 'thrust' },
+    { dayOfBirth: 2, move: 'finger' },
+    { dayOfBirth: 3, move: 'knee' },
+    { dayOfBirth: 4, move: 'jab' },
+    { dayOfBirth: 5, move: 'tackle' },
+    { dayOfBirth: 6, move: 'throw' },
+    { dayOfBirth: 7, move: 'tickle' },
+    { dayOfBirth: 8, move: 'choke' },
+    { dayOfBirth: 9, move: 'uppercut' },
+    { dayOfBirth: 10, move: 'punch' },
+    { dayOfBirth: 11, move: 'claw' },
+    { dayOfBirth: 12, move: 'flail' },
+    { dayOfBirth: 13, move: 'grab' },
+    { dayOfBirth: 14, move: 'elbow' },
+    { dayOfBirth: 15, move: 'kick' },
+    { dayOfBirth: 16, move: 'kiss' },
+    { dayOfBirth: 17, move: 'greeting' },
+    { dayOfBirth: 18, move: 'slink' },
+    { dayOfBirth: 19, move: 'nap' },
+    { dayOfBirth: 20, move: 'sniff' },
+    { dayOfBirth: 21, move: 'hook' },
+    { dayOfBirth: 22, move: 'blow' },
+    { dayOfBirth: 23, move: 'scream' },
+    { dayOfBirth: 24, move: 'headbutt' },
+    { dayOfBirth: 25, move: 'smash' },
+    { dayOfBirth: 26, move: 'stroke' },
+    { dayOfBirth: 27, move: 'bite' },
+    { dayOfBirth: 28, move: 'slap' },
+    { dayOfBirth: 29, move: 'chop' },
+    { dayOfBirth: 30, move: 'stomp' },
+    { dayOfBirth: 31, move: 'smash' }
+  ];
 
-  public get dayOfBirth(): { [day: number]: string; } {
+  public get dayOfBirth(): NumberMove[] {
     return this._dayOfBirth;
   }
 
@@ -134,7 +129,7 @@ export class SpecialMoveService {
 
   public GetSecondMove(day: number): string {
     this.CheckDayRange(day);
-    return this._dayOfBirth[day];
+    return this.dayOfBirth.find(dob => dob.dayOfBirth === day).move;
   }
 
   private CheckDayRange(day: number): void {

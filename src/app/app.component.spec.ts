@@ -1,5 +1,6 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SpecialMoveService } from './special-move.service';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -7,7 +8,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
 
@@ -26,6 +27,10 @@ describe('AppComponent', () => {
   it('should render title in a h1 tag', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to SpecialMove!');
+    expect(compiled.querySelector('h1').textContent).toContain(`Welcome to ${app.title}!`);
+  });
+
+  it('should have property firstName', () => {
+    expect(app.firstName).not.toBeNull();
   });
 });

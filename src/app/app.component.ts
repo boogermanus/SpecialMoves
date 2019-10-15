@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SpecialMoveService } from './special-move.service';
+import { LetterMove } from './interfaces/LetterMove';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,12 @@ import { SpecialMoveService } from './special-move.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SpecialMove';
-  service: SpecialMoveService;
+  public title = 'SpecialMove';
+  private service: SpecialMoveService;
+  public get firstLetter(): LetterMove[] {
+    return this.service.firstLetter;
+  }
   constructor(service: SpecialMoveService) {
     this.service = service;
-  }
-
-  public get surname(): {[letter: string]: string} {
-    return this.service.surname;
   }
 }
