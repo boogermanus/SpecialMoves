@@ -1,6 +1,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -10,7 +11,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
       ],
-      imports: [ MatFormFieldModule ]
+      imports: [
+        MatFormFieldModule,
+        MatSelectModule,
+       ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);

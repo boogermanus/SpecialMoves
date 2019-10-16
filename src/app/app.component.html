@@ -6,4 +6,7 @@
 </div>
 <div>
   <mat-label>Testing</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
+  </mat-select>
 </div>
