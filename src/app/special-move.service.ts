@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LetterMove } from './interfaces/LetterMove';
-interface NumberMove {
-  dayOfBirth: number;
-  move: string;
-}
+import { NumberMove } from './interfaces/NumberMove';
 
 @Injectable({
   providedIn: 'root'
