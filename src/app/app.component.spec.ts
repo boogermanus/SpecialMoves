@@ -8,6 +8,9 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: any;
   let compiled: any;
+
+  const FIRST_LETTER_LABEL_TEXT = 'First Letter of First Name';
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -47,9 +50,11 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('#lblFirstLetter').id).toEqual('lblFirstLetter');
   });
 
-  it(`should have mat-label with id 'lblFirstLetter' and InnerText = 'First Letter of First Name'`, () => {
-    expect(compiled.querySelector('#lblFirstLetter').innerText).toEqual('First Letter of First Name');
+  it(`should have mat-label with id 'lblFirstLetter' and InnerText = ${FIRST_LETTER_LABEL_TEXT}`, () => {
+    expect(compiled.querySelector('#lblFirstLetter').innerText).toEqual(FIRST_LETTER_LABEL_TEXT);
   });
 
-
+  it(`should have mat-form-field with id 'selectFirstLetter'`, () => {
+    expect(compiled.querySelector('#selectFirstLetter')).toBeTruthy();
+  });
 });

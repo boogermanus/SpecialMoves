@@ -6,7 +6,7 @@
 </div>
 <div>
   <mat-label id="lblFirstLetter">First Letter of First Name</mat-label>
-  <mat-form-field>
+  <mat-form-field id="selectFirstLetter">
     <mat-select>
       <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
     </mat-select>
