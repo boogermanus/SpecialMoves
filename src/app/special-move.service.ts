@@ -78,41 +78,41 @@ export class SpecialMoveService {
     return this._dayOfBirth;
   }
 
-  private _surname: {[letter: string]: string} = {
-    a: 'death',
-    b: 'wrath',
-    c: 'peace',
-    d: 'wonder',
-    e: 'desire',
-    f: 'mystery',
-    g: 'rage',
-    h: 'joy',
-    i: 'dread',
-    k: 'fate',
-    l: 'animals',
-    m: 'norris',
-    n: 'the gods',
-    o: 'pain',
-    p: 'war',
-    q: 'surprise',
-    r: 'mayhem',
-    s: 'doom',
-    t: 'hell',
-    u: 'krakatoa',
-    v: 'the acients',
-    w: 'anger',
-    x: 'disappointment',
-    y: 'heaven',
-    z: 'destruction'
-  };
+  private _surname: LetterMove[] = [
+    { letter: 'a', move: 'death' },
+    { letter: 'b', move: 'wrath' },
+    { letter: 'c', move: 'peace' },
+    { letter: 'd', move: 'wonder' },
+    { letter: 'e', move: 'desire' },
+    { letter: 'f', move: 'mystery' },
+    { letter: 'g', move: 'rage' },
+    { letter: 'h', move: 'joy' },
+    { letter: 'i', move: 'dread' },
+    { letter: 'k', move: 'fate' },
+    { letter: 'l', move: 'animals' },
+    { letter: 'm', move: 'norris' },
+    { letter: 'n', move: 'the gods' },
+    { letter: 'o', move: 'pain' },
+    { letter: 'p', move: 'war' },
+    { letter: 'q', move: 'surprise' },
+    { letter: 'r', move: 'mayhem' },
+    { letter: 's', move: 'doom' },
+    { letter: 't', move: 'hell' },
+    { letter: 'u', move: 'krakatoa' },
+    { letter: 'v', move: 'the acients' },
+    { letter: 'w', move: 'anger' },
+    { letter: 'x', move: 'disappointment' },
+    { letter: 'y', move: 'heaven' },
+    { letter: 'z', move: 'destruction' },
+  ];
 
-  public get surname(): {[letter: string]: string} {
+  public get surname(): LetterMove[] {
     return this._surname;
   }
-  private LETTER: RegExp = new RegExp('[a-z|A-Z]');
-  public LETTER_ERROR = 'letter cannot be a number';
-  public LESSTHAN_ERROR = 'day cannot be less than 1';
-  public GREATERTHAN_ERROR = 'day cannot be greater than 31';
+  private readonly LETTER: RegExp = new RegExp('[a-z|A-Z]');
+  public readonly LETTER_ERROR = 'letter cannot be a number';
+  public readonly LESSTHAN_ERROR = 'day cannot be less than 1';
+  public readonly GREATERTHAN_ERROR = 'day cannot be greater than 31';
   constructor() { }
 
   public GetFirstMove(letter: string): string {

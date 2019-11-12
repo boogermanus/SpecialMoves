@@ -16,4 +16,8 @@ export class AppComponent {
   constructor(service: SpecialMoveService) {
     this.service = service;
   }
+
+  public getFirstMove(letter: string): string {
+    return this.service.GetFirstMove(letter);
+  }
 }
