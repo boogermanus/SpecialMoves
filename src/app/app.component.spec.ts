@@ -10,6 +10,7 @@ describe('AppComponent', () => {
   let compiled: any;
 
   const FIRST_LETTER_LABEL_TEXT = 'First Letter of First Name';
+  const DAY_OF_BIRTH_LABEL_TEXT = 'Day of Birth';
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -56,5 +57,21 @@ describe('AppComponent', () => {
 
   it(`should have mat-form-field with id 'selectFirstLetter'`, () => {
     expect(compiled.querySelector('#selectFirstLetter')).toBeTruthy();
+  });
+
+  it('should have property dayOfBirth', () => {
+    expect(app.dayOfBirth).toBeTruthy();
+  });
+
+  it(`should have mat-label with id 'lblDayOfBirth'`, () => {
+    expect(compiled.querySelector('#lblDayOfBirth').id).toEqual('lblDayOfBirth');
+  });
+
+  it(`should have mat-label with id 'lblDayOfBirth' and InnerText = ${DAY_OF_BIRTH_LABEL_TEXT}`, () => {
+    expect(compiled.querySelector('#lblDayOfBirth').innerText).toEqual(DAY_OF_BIRTH_LABEL_TEXT);
+  });
+
+  it(`should have mat-form-field with id 'selectDayOfBirth'`, () => {
+    expect(compiled.querySelector('#selectDayOfBirth')).toBeTruthy();
   });
 });

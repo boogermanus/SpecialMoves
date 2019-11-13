@@ -7,9 +7,24 @@
 <div>
   <mat-label id="lblFirstLetter">First Letter of First Name</mat-label>
   <mat-form-field id="selectFirstLetter">
-    <mat-select #selectFirstLetter>
+    <mat-select>
       <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-label id="lblFirstMove">{{selectFirstLetter.value}}</mat-label>
+</div>
+<div>
+  <mat-label id="lblDayOfBirth">Day of Birth</mat-label>
+  <mat-form-field id="selectDayOfBirth">
+    <mat-select>
+      <mat-option *ngFor="let record of dayOfBirth" [value]="record.dayOfBirth">{{record.dayOfBirth}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <mat-label id="lblSurnameLetter">First Letter of Surname</mat-label>
+  <mat-form-field id="selectSurnameLetter">
+    <mat-select>
+      <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
