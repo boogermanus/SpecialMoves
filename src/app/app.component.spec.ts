@@ -11,6 +11,7 @@ describe('AppComponent', () => {
 
   const FIRST_LETTER_LABEL_TEXT = 'First Letter of First Name';
   const DAY_OF_BIRTH_LABEL_TEXT = 'Day of Birth';
+  const SURNAME_LETTER_LABEL_TEXT = 'First Letter of Surname';
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -21,7 +22,7 @@ describe('AppComponent', () => {
         MatFormFieldModule,
         MatSelectModule,
         BrowserAnimationsModule,
-       ]
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -43,6 +44,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain(`Welcome to ${app.title}!`);
   });
 
+  // firstLetter
   it('should have property firstLetter', () => {
     expect(app.firstLetter).toBeTruthy();
   });
@@ -59,6 +61,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('#selectFirstLetter')).toBeTruthy();
   });
 
+  // dayOfBirth
   it('should have property dayOfBirth', () => {
     expect(app.dayOfBirth).toBeTruthy();
   });
@@ -73,5 +76,22 @@ describe('AppComponent', () => {
 
   it(`should have mat-form-field with id 'selectDayOfBirth'`, () => {
     expect(compiled.querySelector('#selectDayOfBirth')).toBeTruthy();
+  });
+
+  // SurnameLetter
+  it('should have property SurnameLetter', () => {
+    expect(app.surnameLetter).toBeTruthy();
+  });
+
+  it(`should have mat-label with id 'lblSurnameLetter'`, () => {
+    expect(compiled.querySelector('#lblSurnameLetter').id).toEqual('lblSurnameLetter');
+  });
+
+  it(`should have mat-label with id 'lblSurnameLetter' and InnerText = ${SURNAME_LETTER_LABEL_TEXT}`, () => {
+    expect(compiled.querySelector('#lblSurnameLetter').innerText).toEqual(SURNAME_LETTER_LABEL_TEXT);
+  });
+
+  it(`should have mat-form-field with id 'selectSurnameLetter'`, () => {
+    expect(compiled.querySelector('#selectSurnameLetter')).toBeTruthy();
   });
 });
