@@ -140,6 +140,9 @@ export class SpecialMoveService {
   }
 
   public GetThirdMove(letter: string): string {
-    return 'of';
+    if (!this.LETTER.test(letter)) {
+      throw Error(this.LETTER_ERROR);
+    }
+    return `of ${this.surname.find(fl => fl.letter === letter.toLowerCase()).move}`;
   }
 }
