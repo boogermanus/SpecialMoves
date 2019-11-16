@@ -4,37 +4,41 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<div>
-  <table>
-    <tr>
-      <div>
-        <td>
-          <mat-label id="lblFirstLetter" [ngClass]="'formControl'">First Letter of First Name</mat-label>
-        </td>
-        <td>
-          <mat-form-field id="selectFirstLetter" [ngClass]="'formControl'">
-            <mat-select>
-              <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </td>
-      </div>
-    </tr>
-  </table>
-</div>
-<div>
-  <mat-label id="lblDayOfBirth" [ngClass]="'formControl'">Day of Birth</mat-label>
-  <mat-form-field id="selectDayOfBirth" [ngClass]="'formControl'">
-    <mat-select>
-      <mat-option *ngFor="let record of dayOfBirth" [value]="record.dayOfBirth">{{record.dayOfBirth}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div>
-  <mat-label id="lblSurnameLetter" [ngClass]="'formControl'">First Letter of Surname</mat-label>
-  <mat-form-field id="selectSurnameLetter" [ngClass]="'formControl'">
-    <mat-select>
-      <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
+<table>
+  <tr>
+    <td>
+      <mat-label id="lblFirstLetter" [ngClass]="'formControl'">First Letter of First Name</mat-label>
+    </td>
+    <td>
+      <mat-form-field id="selectFirstLetter" [ngClass]="'formControl'">
+        <mat-select>
+          <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-label id="lblDayOfBirth" [ngClass]="'formControl'">Day of Birth</mat-label>
+    </td>
+    <td>
+      <mat-form-field id="selectDayOfBirth" [ngClass]="'formControl'">
+        <mat-select>
+          <mat-option *ngFor="let record of dayOfBirth" [value]="record.dayOfBirth">{{record.dayOfBirth}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-label id="lblSurnameLetter" [ngClass]="'formControl'">First Letter of Surname</mat-label>
+    </td>
+    <td>
+      <mat-form-field id="selectSurnameLetter" [ngClass]="'formControl'">
+        <mat-select>
+          <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
