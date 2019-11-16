@@ -4,7 +4,7 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<table>
+<table align="center">
   <tr>
     <td>
       <mat-label id="lblFirstLetter" [ngClass]="'formControl'">First Letter of First Name</mat-label>
@@ -12,7 +12,7 @@
     <td>
       <mat-form-field id="selectFirstLetter" [ngClass]="'formControl'">
         <mat-select>
-          <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter}}</mat-option>
+          <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter.toUpperCase()}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>
@@ -36,9 +36,13 @@
     <td>
       <mat-form-field id="selectSurnameLetter" [ngClass]="'formControl'">
         <mat-select>
-          <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter}}</mat-option>
+          <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter.toUpperCase()}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>
+  </tr>
+  <tr>
+    <td><mat-label [ngClass]="'formControl'">Button Here</mat-label></td>
+    <td><mat-label [ngClass]="'formControl'">Answer here</mat-label></td>
   </tr>
 </table>
