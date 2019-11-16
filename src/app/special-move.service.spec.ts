@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { SpecialMoveService } from './special-move.service';
-import { LetterMove } from './interfaces/LetterMove';
+
 
 // to debug tests run 'ng test --browsers Chrome_with_debugging'
 describe('SpecialMoveService', () => {
@@ -34,7 +34,7 @@ describe('SpecialMoveService', () => {
       for (const firstLetter of firstName) {
         if (firstLetter != null) {
           expect(service.GetFirstMove(firstLetter.letter))
-            .toEqual(firstName.find(fn => fn.letter === firstLetter.letter).move);
+            .toEqual(firstLetter.move);
         }
       }
     });
@@ -78,7 +78,7 @@ describe('SpecialMoveService', () => {
         for (const firstLetter of surname) {
           if (firstLetter != null) {
             expect(service.GetThirdMove(firstLetter.letter))
-              .toEqual(`of ${surname.find(fn => fn.letter === firstLetter.letter).move}`);
+              .toEqual(`of ${firstLetter.move}`);
           }
         }
       });
