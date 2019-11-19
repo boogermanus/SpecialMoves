@@ -117,11 +117,14 @@ export class SpecialMoveService {
 
   public GetFirstMove(letter: string): string {
 
-    if (!this.LETTER.test(letter)) {
-      throw Error(this.LETTER_ERROR);
+    if (letter === null) {
+      return '';
     }
 
+    this.CheckLetter(letter);
+
     return this.firstLetter.find(fl => fl.letter === letter.toLowerCase()).move;
+
   }
 
   public GetSecondMove(day: number): string {
@@ -144,5 +147,11 @@ export class SpecialMoveService {
       throw Error(this.LETTER_ERROR);
     }
     return `of ${this.surname.find(fl => fl.letter === letter.toLowerCase()).move}`;
+  }
+
+  private CheckLetter(letter: string): void {
+    if (!this.LETTER.test(letter)) {
+      throw Error(this.LETTER_ERROR);
+    }
   }
 }

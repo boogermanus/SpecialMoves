@@ -38,6 +38,9 @@ describe('SpecialMoveService', () => {
         }
       }
     });
+    it('should return empty string from a null value', () => {
+      expect(service.GetFirstMove(null)).toBe('');
+    });
   });
   // GetSecondMove    ---------------------------------------------------------------------------------
   describe('GetSecondMove', () => {

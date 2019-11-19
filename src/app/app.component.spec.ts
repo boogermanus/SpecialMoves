@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         MatFormFieldModule,
         MatSelectModule,
         BrowserAnimationsModule,
+        FormsModule,
       ]
     }).compileComponents();
 
@@ -93,5 +95,9 @@ describe('AppComponent', () => {
 
   it(`should have mat-form-field with id 'selectSurnameLetter'`, () => {
     expect(compiled.querySelector('#selectSurnameLetter')).toBeTruthy();
+  });
+
+  it('should have method GetMove', () => {
+    expect(app.GetMove()).toBe('');
   });
 });

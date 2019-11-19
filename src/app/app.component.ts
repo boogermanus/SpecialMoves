@@ -29,7 +29,7 @@ export class AppComponent {
     this.service = service;
   }
 
-  public GetFirstMove(letter: string): string {
-    return this.service.GetFirstMove(letter);
+  public GetMove(): string {
+    return '';
   }
 }
