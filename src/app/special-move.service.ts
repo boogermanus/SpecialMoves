@@ -128,11 +128,19 @@ export class SpecialMoveService {
   }
 
   public GetSecondMove(day: number): string {
+
+    if (day === null) {
+      return '';
+    }
+
     this.CheckDayRange(day);
+
     return this.dayOfBirth.find(dob => dob.dayOfBirth === day).move;
+
   }
 
   private CheckDayRange(day: number): void {
+
     if (day < 1) {
       throw Error(this.LESSTHAN_ERROR);
     }
@@ -140,18 +148,27 @@ export class SpecialMoveService {
     if (day > 31) {
       throw Error(this.GREATERTHAN_ERROR);
     }
+
   }
 
   public GetThirdMove(letter: string): string {
-    if (!this.LETTER.test(letter)) {
-      throw Error(this.LETTER_ERROR);
+
+    if (letter === null) {
+      return '';
     }
+
+    this.CheckLetter(letter);
+
     return `of ${this.surname.find(fl => fl.letter === letter.toLowerCase()).move}`;
+
   }
 
   private CheckLetter(letter: string): void {
+
     if (!this.LETTER.test(letter)) {
+
       throw Error(this.LETTER_ERROR);
     }
+
   }
 }

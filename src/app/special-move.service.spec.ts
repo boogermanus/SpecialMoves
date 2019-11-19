@@ -62,6 +62,9 @@ describe('SpecialMoveService', () => {
         expect(service.GetSecondMove(i)).toEqual(days[i - 1].move);
       }
     });
+    it('should return empty string from a null value', () => {
+      expect(service.GetSecondMove(null)).toBe('');
+    });
   });
   // GetThirdMove   ---------------------------------------------------------------------------------
   describe('GetThirdMove', () => {
@@ -84,6 +87,9 @@ describe('SpecialMoveService', () => {
               .toEqual(`of ${firstLetter.move}`);
           }
         }
+      });
+      it('should return empty string from a null value', () => {
+        expect(service.GetThirdMove(null)).toBe('');
       });
      });
 });
