@@ -10,6 +10,7 @@ import { NumberMove } from './interfaces/NumberMove';
 })
 export class AppComponent {
   public title = 'Special Move';
+  public selectedFirstLetter: string;
   private service: SpecialMoveService;
 
   public get firstLetter(): LetterMove[] {
@@ -28,7 +29,7 @@ export class AppComponent {
     this.service = service;
   }
 
-  public getFirstMove(letter: string): string {
+  public GetFirstMove(letter: string): string {
     return this.service.GetFirstMove(letter);
   }
 }
