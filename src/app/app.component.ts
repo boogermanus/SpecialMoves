@@ -33,6 +33,8 @@ export class AppComponent {
     if (this.noSelectionsMade()) {
       return '';
     }
+
+    return this.service.GetFirstMove(this.selectedFirstLetter);
   }
 
   private noSelectionsMade(): boolean {

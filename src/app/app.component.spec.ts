@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { LetterMove } from './interfaces/LetterMove';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
   const FIRST_LETTER_LABEL_TEXT = 'First Letter of First Name';
   const DAY_OF_BIRTH_LABEL_TEXT = 'Day of Birth';
   const SURNAME_LETTER_LABEL_TEXT = 'First Letter of Surname';
+  const LOWERCASE_A = 'a';
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -61,45 +63,24 @@ describe('AppComponent', () => {
   // firstLetter
   describe('firstLetter controls', () => {
 
-    it(`should have mat-label with id 'lblFirstLetter'`, () => {
-      expect(compiled.querySelector('#lblFirstLetter').id).toEqual('lblFirstLetter');
-    });
-
     it(`should have mat-label with id 'lblFirstLetter' and InnerText = ${FIRST_LETTER_LABEL_TEXT}`, () => {
       expect(compiled.querySelector('#lblFirstLetter').innerText).toEqual(FIRST_LETTER_LABEL_TEXT);
     });
 
-    it(`should have mat-form-field with id 'selectFirstLetter'`, () => {
-      expect(compiled.querySelector('#selectFirstLetter')).toBeTruthy();
-    });
   });
   // dayOfBirth
   describe('dayOfBirthControls', () => {
-    it(`should have mat-label with id 'lblDayOfBirth'`, () => {
-      expect(compiled.querySelector('#lblDayOfBirth').id).toEqual('lblDayOfBirth');
-    });
 
     it(`should have mat-label with id 'lblDayOfBirth' and InnerText = ${DAY_OF_BIRTH_LABEL_TEXT}`, () => {
       expect(compiled.querySelector('#lblDayOfBirth').innerText).toEqual(DAY_OF_BIRTH_LABEL_TEXT);
     });
 
-    it(`should have mat-form-field with id 'selectDayOfBirth'`, () => {
-      expect(compiled.querySelector('#selectDayOfBirth')).toBeTruthy();
-    });
   });
 
   // SurnameLetter
   describe('surnameLetter controls', () => {
-    it(`should have mat-label with id 'lblSurnameLetter'`, () => {
-      expect(compiled.querySelector('#lblSurnameLetter').id).toEqual('lblSurnameLetter');
-    });
-
     it(`should have mat-label with id 'lblSurnameLetter' and InnerText = ${SURNAME_LETTER_LABEL_TEXT}`, () => {
       expect(compiled.querySelector('#lblSurnameLetter').innerText).toEqual(SURNAME_LETTER_LABEL_TEXT);
-    });
-
-    it(`should have mat-form-field with id 'selectSurnameLetter'`, () => {
-      expect(compiled.querySelector('#selectSurnameLetter')).toBeTruthy();
     });
   });
 
@@ -108,6 +89,11 @@ describe('AppComponent', () => {
       expect(app.GetMove()).toBe('');
     });
 
+    it('should return a valid move when selectedFirstMove is set', () => {
+      app.selectedFirstLetter = LOWERCASE_A;
+      const answer: LetterMove = app.firstLetter.find(fl => fl.letter === LOWERCASE_A);
+      expect(app.GetMove()).toBe(answer.move);
+    });
   });
 
 });
