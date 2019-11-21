@@ -10,7 +10,7 @@ import { NumberMove } from './interfaces/NumberMove';
 })
 export class AppComponent {
   public title = 'Special Move';
-  public selectedFirstLetter: string;
+  public selectedFirstLetter: string = null;
   private service: SpecialMoveService;
 
   public get firstLetter(): LetterMove[] {
@@ -30,6 +30,16 @@ export class AppComponent {
   }
 
   public GetMove(): string {
-    return '';
+    if (this.noSelectionsMade()) {
+      return '';
+    }
+  }
+
+  private noSelectionsMade(): boolean {
+    if (this.selectedFirstLetter !== null) {
+      return false;
+    }
+
+    return true;
   }
 }
