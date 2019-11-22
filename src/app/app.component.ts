@@ -15,8 +15,6 @@ export class AppComponent {
   public selectedSurnameLetter: string = null;
   public selectedMove = '';
 
-  private service: SpecialMoveService;
-
   public get firstLetter(): LetterMove[] {
     return this.service.firstLetter;
   }
@@ -29,8 +27,8 @@ export class AppComponent {
     return this.service.surname;
   }
 
-  constructor(service: SpecialMoveService) {
-    this.service = service;
+  constructor(private service: SpecialMoveService) {
+
   }
 
   public GetMove(): string {
