@@ -5,6 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LetterMove } from './interfaces/LetterMove';
+import { NumberMove } from './interfaces/NumberMove';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -15,6 +16,8 @@ describe('AppComponent', () => {
   const DAY_OF_BIRTH_LABEL_TEXT = 'Day of Birth';
   const SURNAME_LETTER_LABEL_TEXT = 'First Letter of Surname';
   const LOWERCASE_A = 'a';
+  const FIRST_DAY_OF_MONTH = 1;
+  const MOVE_PATTERN: RegExp = /\w* \w* of \w*/;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -89,10 +92,21 @@ describe('AppComponent', () => {
       expect(app.GetMove()).toBe('');
     });
 
-    it('should return a valid move when selectedFirstMove is set', () => {
+    it('should return a valid move when all three selected properties are set', () => {
       app.selectedFirstLetter = LOWERCASE_A;
-      const answer: LetterMove = app.firstLetter.find(fl => fl.letter === LOWERCASE_A);
-      expect(app.GetMove()).toBe(answer.move);
+      app.selectedDayOfBirth = FIRST_DAY_OF_MONTH;
+      app.selectedSurnameLetter = LOWERCASE_A;
+
+      expect(app.GetMove()).toMatch(MOVE_PATTERN);
+    });
+
+    it('should set value of selectedMove when onClick() is called', () => {
+      app.selectedFirstLetter = LOWERCASE_A;
+      app.selectedDayOfBirth = FIRST_DAY_OF_MONTH;
+      app.selectedSurnameLetter = LOWERCASE_A;
+
+      app.onClick();
+      expect(app.selectedMove).toMatch(MOVE_PATTERN);
     });
   });
 
