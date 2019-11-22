@@ -5,8 +5,8 @@ import { SpecialMoveService } from './special-move.service';
 // to debug tests run 'ng test --browsers Chrome_with_debugging'
 describe('SpecialMoveService', () => {
   let service: SpecialMoveService;
-  const FIRST_LETTER_FIRST_MOVE = 'thunder';
-  const SURNAME_LETTER_FIRST_MOVE = 'of death';
+  const FIRST_LETTER_FIRST_MOVE = 'Thunder';
+  const SURNAME_LETTER_FIRST_MOVE = 'of Death';
   const NON_ALAPHBET_CHARACTER = '1';
   beforeEach(() => {
     TestBed.configureTestingModule({});
