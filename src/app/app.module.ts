@@ -15,8 +15,6 @@ import { MaterialModule } from './material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSelectModule,
-    MatFormFieldModule,
     MaterialModule,
     FormsModule
   ],
