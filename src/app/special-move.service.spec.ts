@@ -10,7 +10,7 @@ describe('SpecialMoveService', () => {
   const NON_ALAPHBET_CHARACTER = '1';
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.get(SpecialMoveService);
+    service = TestBed.inject(SpecialMoveService);
   });
   it('should be created', () => {
     expect(service).toBeTruthy();
