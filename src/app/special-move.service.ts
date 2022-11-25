@@ -9,7 +9,7 @@ export class SpecialMoveService {
 
   private _firstLetter: LetterMove[] = [
     { letter: 'a', move: 'Thunder' },
-    { letter: 'b', move: 'Slient' },
+    { letter: 'b', move: 'Silent' },
     { letter: 'c', move: 'Flying' },
     { letter: 'd', move: 'Handbag' },
     { letter: 'e', move: 'Psychotic' },
@@ -99,7 +99,7 @@ export class SpecialMoveService {
     { letter: 's', move: 'Doom' },
     { letter: 't', move: 'Hell' },
     { letter: 'u', move: 'Krakatoa' },
-    { letter: 'v', move: 'The Acients' },
+    { letter: 'v', move: 'The Ancients' },
     { letter: 'w', move: 'Anger' },
     { letter: 'x', move: 'Disappointment' },
     { letter: 'y', move: 'Heaven' },
@@ -111,8 +111,8 @@ export class SpecialMoveService {
   }
   private readonly LETTER: RegExp = new RegExp('[a-z|A-Z]');
   public readonly LETTER_ERROR = 'letter cannot be a number';
-  public readonly LESSTHAN_ERROR = 'day cannot be less than 1';
-  public readonly GREATERTHAN_ERROR = 'day cannot be greater than 31';
+  public readonly LESS_THAN_ERROR = 'day cannot be less than 1';
+  public readonly GREATER_THAN_ERROR = 'day cannot be greater than 31';
   constructor() { }
 
   public GetFirstMove(letter: string): string {
@@ -142,11 +142,11 @@ export class SpecialMoveService {
   private CheckDayRange(day: number): void {
 
     if (day < 1) {
-      throw Error(this.LESSTHAN_ERROR);
+      throw Error(this.LESS_THAN_ERROR);
     }
 
     if (day > 31) {
-      throw Error(this.GREATERTHAN_ERROR);
+      throw Error(this.GREATER_THAN_ERROR);
     }
 
   }

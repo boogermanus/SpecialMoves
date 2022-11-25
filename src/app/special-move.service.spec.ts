@@ -49,11 +49,11 @@ describe('SpecialMoveService', () => {
     });
     it('should throw exception if number is less than 1', () => {
       expect(() => service.GetSecondMove(0))
-        .toThrow(Error(service.LESSTHAN_ERROR));
+        .toThrow(Error(service.LESS_THAN_ERROR));
     });
     it('should throw exception if number is greater than 31', () => {
       expect(() => service.GetSecondMove(32))
-        .toThrow(Error(service.GREATERTHAN_ERROR));
+        .toThrow(Error(service.GREATER_THAN_ERROR));
     });
     it('should return a valid value for all numbers from 1 to 31', () => {
       const days = service.dayOfBirth;
