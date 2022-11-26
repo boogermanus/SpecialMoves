@@ -10,9 +10,9 @@ import { NumberMove } from './interfaces/NumberMove';
 })
 export class AppComponent {
   public title = 'Special Move';
-  public selectedFirstLetter: string = null;
-  public selectedDayOfBirth: number = null;
-  public selectedSurnameLetter: string = null;
+  public selectedFirstLetter: string = "";
+  public selectedDayOfBirth: number = 0;
+  public selectedSurnameLetter: string = "";
   public selectedMove = '';
 
   public get firstLetter(): LetterMove[] {
@@ -35,9 +35,9 @@ export class AppComponent {
     if (this.noSelectionsMade()) {
       return '';
     }
-    const firstMove: string = this.service.GetFirstMove(this.selectedFirstLetter);
-    const dayOfBirthMove: string = this.service.GetSecondMove(this.selectedDayOfBirth);
-    const surnameMove: string = this.service.GetThirdMove(this.selectedSurnameLetter);
+    const firstMove: string | undefined = this.service.GetFirstMove(this.selectedFirstLetter);
+    const dayOfBirthMove: string | undefined = this.service.GetSecondMove(this.selectedDayOfBirth);
+    const surnameMove: string | undefined = this.service.GetThirdMove(this.selectedSurnameLetter);
     return `${firstMove} ${dayOfBirthMove} ${surnameMove}`;
   }
 

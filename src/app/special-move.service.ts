@@ -115,19 +115,19 @@ export class SpecialMoveService {
   public readonly GREATER_THAN_ERROR = 'day cannot be greater than 31';
   constructor() { }
 
-  public GetFirstMove(letter: string): string {
+  public GetFirstMove(letter: string): string | undefined {
 
     if (letter === null) {
       return '';
     }
 
     this.CheckLetter(letter);
-
-    return this.firstLetter.find(fl => fl.letter === letter.toLowerCase()).move;
+    
+    return this.firstLetter?.find(fl => fl.letter === letter.toLowerCase())?.move;
 
   }
 
-  public GetSecondMove(day: number): string {
+  public GetSecondMove(day: number): string | undefined{
 
     if (day === null) {
       return '';
@@ -135,7 +135,7 @@ export class SpecialMoveService {
 
     this.CheckDayRange(day);
 
-    return this.dayOfBirth.find(dob => dob.dayOfBirth === day).move;
+    return this.dayOfBirth?.find(dob => dob.dayOfBirth === day)?.move;
 
   }
 
@@ -151,7 +151,7 @@ export class SpecialMoveService {
 
   }
 
-  public GetThirdMove(letter: string): string {
+  public GetThirdMove(letter: string): string | undefined {
 
     if (letter === null) {
       return '';
@@ -159,7 +159,7 @@ export class SpecialMoveService {
 
     this.CheckLetter(letter);
 
-    return `of ${this.surname.find(fl => fl.letter === letter.toLowerCase()).move}`;
+    return `of ${this.surname?.find(fl => fl.letter === letter.toLowerCase())?.move}`;
 
   }
 
