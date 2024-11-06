@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SpecialMoves:build:production"
+              "buildTarget": "SpecialMoves:build:production"
             },
             "development": {
-              "browserTarget": "SpecialMoves:build:development"
+              "buildTarget": "SpecialMoves:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SpecialMoves:build"
+            "buildTarget": "SpecialMoves:build"
           }
         },
         "test": {
