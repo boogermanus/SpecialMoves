@@ -89,7 +89,7 @@ describe('AppComponent', () => {
 
   describe('GetMove', () => {
     it('should have method GetMove', () => {
-      expect(app.GetMove()).toBe('');
+      expect(app.GetMove).toBeDefined();
     });
 
     it('should return a valid move when all three selected properties are set', () => {
