@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import {TestBed, ComponentFixture, waitForAsync} from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   const FIRST_DAY_OF_MONTH = 1;
   const MOVE_PATTERN: RegExp = /\w* \w* of \w*/;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
