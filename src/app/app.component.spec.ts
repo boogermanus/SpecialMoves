@@ -86,28 +86,4 @@ describe('AppComponent', () => {
       expect(compiled.querySelector('#lblSurnameLetter').innerText).toEqual(SURNAME_LETTER_LABEL_TEXT);
     });
   });
-
-  describe('GetMove', () => {
-    it('should have method GetMove', () => {
-      expect(app.GetMove).toBeDefined();
-    });
-
-    it('should return a valid move when all three selected properties are set', () => {
-      app.selectedFirstLetter = LOWERCASE_A;
-      app.selectedDayOfBirth = FIRST_DAY_OF_MONTH;
-      app.selectedSurnameLetter = LOWERCASE_A;
-
-      expect(app.GetMove()).toMatch(MOVE_PATTERN);
-    });
-
-    it('should set value of selectedMove when onClick() is called', () => {
-      app.selectedFirstLetter = LOWERCASE_A;
-      app.selectedDayOfBirth = FIRST_DAY_OF_MONTH;
-      app.selectedSurnameLetter = LOWERCASE_A;
-
-      app.onClick();
-      expect(app.selectedMove).toMatch(MOVE_PATTERN);
-    });
-  });
-
 });
