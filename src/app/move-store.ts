@@ -12,9 +12,9 @@ type MoveState = {
 }
 
 const initialMoveState: MoveState = {
-  firstLetter: 'Hello',
+  firstLetter: '',
   dayOfBirth: null,
-  surnameLetter: 'World',
+  surnameLetter: '',
   firstMove: '',
   secondMove: '',
   thirdMove: '',

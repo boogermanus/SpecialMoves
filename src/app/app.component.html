@@ -9,7 +9,7 @@
     <tr>
       <td>
         <mat-form-field style="width: 300px;">
-          <mat-label>First Letter of First Name</mat-label>
+          <mat-label id="lblFirstLetter">First Letter of First Name</mat-label>
           <mat-select [ngModel]="store.firstLetter()" (ngModelChange)="store.updateFirstMove($event)">
             @for (record of firstLetter; track record.letter) {
               <mat-option [value]="record.letter">{{ record.letter.toUpperCase() }}</mat-option>
@@ -21,7 +21,7 @@
     <tr>
       <td>
         <mat-form-field style="width: 300px;">
-          <mat-label>Day of Birth</mat-label>
+          <mat-label id="lblDayOfBirth">Day of Birth</mat-label>
           <mat-select [ngModel]="store.dayOfBirth()" (ngModelChange)="store.updateSecondMove($event)">
             @for (record of dayOfBirth; track record.dayOfBirth) {
               <mat-option [value]="record.dayOfBirth">{{ record.dayOfBirth }}</mat-option>
@@ -33,7 +33,7 @@
     <tr>
       <td>
         <mat-form-field style="width: 300px;">
-          <mat-label>First Letter of Surname</mat-label>
+          <mat-label id="lblSurnameLetter">First Letter of Surname</mat-label>
           <mat-select [ngModel]="store.surnameLetter()" (ngModelChange)="store.updateThirdMove($event)">
             @for (record of surnameLetter; track record.letter) {
               <mat-option [value]="record.letter">{{ record.letter.toUpperCase() }}</mat-option>
