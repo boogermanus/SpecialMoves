@@ -26,7 +26,7 @@ export class SpecialMoveService {
     { letter: 'p', move: 'Naked' },
     { letter: 'q', move: 'Violent' },
     { letter: 'r', move: 'Spectacular' },
-    { letter: 's', move: 'Gridning' },
+    { letter: 's', move: 'Grinding' },
     { letter: 't', move: 'Sneaky' },
     { letter: 'u', move: 'Bendy' },
     { letter: 'v', move: 'Yellow' },
@@ -122,7 +122,7 @@ export class SpecialMoveService {
     }
 
     this.CheckLetter(letter);
-    
+
     return this.firstLetter?.find(fl => fl.letter === letter.toLowerCase())?.move;
 
   }
