@@ -3,6 +3,7 @@ import {SpecialMoveService} from './special-move.service';
 import {LetterMove} from './interfaces/LetterMove';
 import {NumberMove} from './interfaces/NumberMove';
 import {MoveStore} from "./move-store";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -58,4 +59,6 @@ export class AppComponent {
 
     return true;
   }
+
+  protected readonly first = first;
 }

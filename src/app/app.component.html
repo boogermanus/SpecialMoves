@@ -5,50 +5,45 @@
   </h1>
 </div>
 <div>
-  <p>data</p>
-  <p>First Letter: {{store.firstLetter()}}</p>
-  {{store.dayOfBirth()}}
-  {{store.surnameLetter()}}
+  <table align="center">
+    <tr>
+      <td>
+        <mat-form-field style="width: 300px;">
+          <mat-label>First Letter of First Name</mat-label>
+          <mat-select [ngModel]="store.firstLetter()" (ngModelChange)="store.updateFirstMove($event)">
+            @for (record of firstLetter; track record.letter) {
+              <mat-option [value]="record.letter">{{ record.letter.toUpperCase() }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field style="width: 300px;">
+          <mat-label>Day of Birth</mat-label>
+          <mat-select [ngModel]="store.dayOfBirth()" (ngModelChange)="store.updateSecondMove($event)">
+            @for (record of dayOfBirth; track record.dayOfBirth) {
+              <mat-option [value]="record.dayOfBirth">{{ record.dayOfBirth }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field style="width: 300px;">
+          <mat-label>First Letter of Surname</mat-label>
+          <mat-select [ngModel]="store.surnameLetter()" (ngModelChange)="store.updateThirdMove($event)">
+            @for (record of surnameLetter; track record.letter) {
+              <mat-option [value]="record.letter">{{ record.letter.toUpperCase() }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><h2>{{store.firstMove()}} {{store.secondMove()}} {{store.thirdMove()}}</h2></td>
+    </tr>
+  </table>
 </div>
-<table align="center">
-  <tr>
-    <td>
-      <mat-label id="lblFirstLetter" [ngClass]="'formControl'">First Letter of First Name</mat-label>
-    </td>
-    <td>
-      <mat-form-field id="selectFirstLetter" [ngClass]="'formControl'">
-        <mat-select [(ngModel)]="selectedFirstLetter">
-          <mat-option *ngFor="let record of firstLetter" [value]="record.letter">{{record.letter.toUpperCase()}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <mat-label id="lblDayOfBirth" [ngClass]="'formControl'">Day of Birth</mat-label>
-    </td>
-    <td>
-      <mat-form-field id="selectDayOfBirth" [ngClass]="'formControl'">
-        <mat-select [(ngModel)]="selectedDayOfBirth">
-          <mat-option *ngFor="let record of dayOfBirth" [value]="record.dayOfBirth">{{record.dayOfBirth}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <mat-label id="lblSurnameLetter" [ngClass]="'formControl'">First Letter of Surname</mat-label>
-    </td>
-    <td>
-      <mat-form-field id="selectSurnameLetter" [ngClass]="'formControl'">
-        <mat-select [(ngModel)]="selectedSurnameLetter">
-          <mat-option *ngFor="let record of surnameLetter" [value]="record.letter">{{record.letter.toUpperCase()}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding-left: 20px;"><button mat-raised-button (click)="onClick()">Get Move</button></td>
-    <td><mat-label [ngClass]="'formControl'">{{selectedMove}}</mat-label></td>
-  </tr>
-</table>
