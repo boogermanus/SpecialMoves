@@ -7,9 +7,9 @@ type MoveState = {
 }
 
 const initialMoveState: MoveState = {
-  firstLetter: '',
+  firstLetter: 'Hello',
   dayOfBirth: null,
-  surnameLetter: ''
+  surnameLetter: 'World'
 }
 
 export const MoveStore = signalStore(
