@@ -24,7 +24,7 @@ describe('SpecialMoveService', () => {
     it('should translate parameter to lowercase', () => {
       expect(service.GetFirstMove('A')).toEqual(FIRST_LETTER_FIRST_MOVE);
     });
-    it('should throw exception if parameter is not an alaphbet character', () => {
+    it('should throw exception if parameter is not an alphabet character', () => {
       expect(() => service.GetFirstMove(NON_ALAPHBET_CHARACTER))
         .toThrow(Error(service.LETTER_ERROR));
     });
@@ -74,7 +74,7 @@ describe('SpecialMoveService', () => {
       it('should translate parameter to lowercase', () => {
         expect(service.GetThirdMove('A')).toEqual(SURNAME_LETTER_FIRST_MOVE);
       });
-      it('should throw exception if parameter is not an alaphbet character', () => {
+      it('should throw exception if parameter is not an alphabet character', () => {
         expect(() => service.GetThirdMove('1'))
           .toThrow(Error(service.LETTER_ERROR));
       });
@@ -88,8 +88,8 @@ describe('SpecialMoveService', () => {
           }
         }
       });
-      it('should return empty string from a null value', () => {
-        expect(service.GetThirdMove(null)).toBe('');
+      it('should return of for a null value', () => {
+        expect(service.GetThirdMove(null)).toBe('of ');
       });
      });
 });
