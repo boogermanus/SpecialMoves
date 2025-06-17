@@ -1,4 +1,6 @@
-﻿type MoveState = {
+﻿import {signalStore, withState} from "@ngrx/signals";
+
+type MoveState = {
   firstLetter: string;
   dayOfBirth: number | null;
   surnameLetter: string;
@@ -9,4 +11,8 @@ const initialMoveState: MoveState = {
   dayOfBirth: null,
   surnameLetter: ''
 }
+
+export const MoveStore = signalStore(
+  withState(initialMoveState)
+)
 
